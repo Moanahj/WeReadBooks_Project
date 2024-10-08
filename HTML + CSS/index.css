@@ -1,0 +1,263 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(50,210,76,1) 94%);
+    color: rgb(229, 253, 246);
+}
+
+header {
+    margin: 0;
+    margin-bottom: 15%;
+    padding: 20px 50px;
+}
+
+footer {
+    margin-top: 30%;
+    padding: 20px 50px;
+}
+
+.tri {
+   text-align: center ;
+   flex-wrap: wrap;
+}
+
+.booksGrid {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 300px 300px 300px 300px;
+    gap: 20px;
+}
+
+header,
+footer,
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lien-icone:hover {
+    opacity: 0.5;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu:hover {
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+nav a,
+a {
+    padding: 20px 20px;
+    text-decoration: none;
+    color: rgb(229, 253, 246);
+}
+
+h3,
+h2 {
+    text-align: center;
+}
+
+input,
+button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 80%;
+    max-width: 400px;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.tri-recherche {
+    background-color: black;
+    color: white;
+}
+
+.bookItem {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 15px;
+}
+
+
+.bookImage {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+.booksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 50px;
+    padding: 50px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+    grid-row-gap: 200px;
+}
+/* Espacement entre les lignes grid-row-gap */
+
+.bookImage:hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.bookItem:hover .booksGrid  {
+    display: flex;
+    grid-row-gap: 20px;
+}
+
+
+.book button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.book button:hover {
+    background-color: #555;
+}
+
+.book.reserved h2 {
+    color: red;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* CSS pour le menu buger  */
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -250px;
+    background-color: black;
+    padding-top: 60px;
+    transition: right 0.5s ease;
+  }
+
+  /* Sidenav menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+    color: #111;
+  }
+
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidenav.active {
+    right: 0;
+  }
+
+  /* Bouton de fermeture */
+  .sidenav .close {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 26px;
+  }
+
+  /* Icône burger */
+  .burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+  }
+
+  
+  /* Slider de 5 images */
+
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logos:before,
+.logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.slide:hover .logos-slide { 
+    animation-play-state:paused;
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: 20s slide infinite linear;
+}
+
+.logos-slide img {
+    height: 100px;
+    margin: 0 40px;
+}
